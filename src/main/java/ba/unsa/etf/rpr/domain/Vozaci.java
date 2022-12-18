@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.domain;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Vozaci {
     private int idVozaca;
@@ -53,5 +54,18 @@ public class Vozaci {
 
     public void setDatum(Date datum) {
         this.datum = datum;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Vozaci)) return false;
+        Vozaci vozaci = (Vozaci) o;
+        return getIdVozaca() == vozaci.getIdVozaca() && Objects.equals(getIme(), vozaci.getIme()) && Objects.equals(getPrezime(), vozaci.getPrezime()) && Objects.equals(getAdresa(), vozaci.getAdresa()) && Objects.equals(getDatum(), vozaci.getDatum());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getIdVozaca(), getIme(), getPrezime(), getAdresa(), getDatum());
     }
 }

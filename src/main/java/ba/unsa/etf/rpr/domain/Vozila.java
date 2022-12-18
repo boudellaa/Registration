@@ -67,14 +67,14 @@ public class Vozila {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Vozila)) return false;
         Vozila vozila = (Vozila) o;
-        return idVozila == vozila.idVozila && cijenaVozila == vozila.cijenaVozila && idVozaca == vozila.idVozaca && Objects.equals(imeVozila, vozila.imeVozila) && Objects.equals(gorivo, vozila.gorivo) && Objects.equals(bojaVozila, vozila.bojaVozila);
+        return getIdVozila() == vozila.getIdVozila() && getCijenaVozila() == vozila.getCijenaVozila() && getIdVozaca() == vozila.getIdVozaca() && Objects.equals(getImeVozila(), vozila.getImeVozila()) && Objects.equals(getGorivo(), vozila.getGorivo()) && Objects.equals(getBojaVozila(), vozila.getBojaVozila());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idVozila, cijenaVozila, imeVozila, gorivo, bojaVozila, idVozaca);
+        return Objects.hash(getIdVozila(), getCijenaVozila(), getImeVozila(), getGorivo(), getBojaVozila(), getIdVozaca());
     }
 
     @Override
