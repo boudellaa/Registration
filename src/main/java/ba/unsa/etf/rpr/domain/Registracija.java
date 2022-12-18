@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.domain;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Registracija {
     private int idRegistracije, idVozila;
@@ -44,5 +45,18 @@ public class Registracija {
 
     public void setImeFirme(String imeFirme) {
         this.imeFirme = imeFirme;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Registracija)) return false;
+        Registracija that = (Registracija) o;
+        return getIdRegistracije() == that.getIdRegistracije() && getIdVozila() == that.getIdVozila() && Objects.equals(getDatum(), that.getDatum()) && Objects.equals(getImeFirme(), that.getImeFirme());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getIdRegistracije(), getIdVozila(), getDatum(), getImeFirme());
     }
 }
