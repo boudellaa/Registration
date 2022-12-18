@@ -68,4 +68,15 @@ public class Vozaci {
     public int hashCode() {
         return Objects.hash(getIdVozaca(), getIme(), getPrezime(), getAdresa(), getDatum());
     }
+
+    @Override
+    public String toString() {
+        return "Vozaci{" +
+                "idVozaca=" + idVozaca +
+                ", ime='" + ime + '\'' +
+                ", prezime='" + prezime + '\'' +
+                ", adresa='" + adresa + '\'' +
+                ", datum=" + datum +
+                '}';
+    }
 }
