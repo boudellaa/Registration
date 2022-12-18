@@ -3,6 +3,11 @@ package ba.unsa.etf.rpr.domain;
 import java.util.Date;
 import java.util.Objects;
 
+/**
+ *
+ * @author Ali Boudellaa
+ */
+
 public class Registracija {
     private int idRegistracije, idVozila;
     private Date datum;

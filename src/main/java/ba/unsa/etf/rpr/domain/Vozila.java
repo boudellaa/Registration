@@ -2,6 +2,13 @@ package ba.unsa.etf.rpr.domain;
 
 import java.util.Objects;
 
+
+/**
+ *
+ * @author Ali Boudellaa
+ */
+
+
 public class Vozila {
     private int idVozila, cijenaVozila;
     private String imeVozila, gorivo, bojaVozila;
