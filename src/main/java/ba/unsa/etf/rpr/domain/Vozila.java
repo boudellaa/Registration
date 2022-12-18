@@ -15,14 +15,6 @@ public class Vozila {
         this.bojaVozila = bojaVozila;
         this.idVozaca = idVozaca;
     }
-    public Vozila(){
-        this.idVozila = 0;
-        this.cijenaVozila = 0;
-        this.imeVozila = "";
-        this.gorivo = "";
-        this.bojaVozila = "";
-        this.idVozaca = 0;
-    }
 
     public int getIdVozila() {
         return idVozila;
