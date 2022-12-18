@@ -59,4 +59,14 @@ public class Registracija {
     public int hashCode() {
         return Objects.hash(getIdRegistracije(), getIdVozila(), getDatum(), getImeFirme());
     }
+
+    @Override
+    public String toString() {
+        return "Registracija{" +
+                "idRegistracije=" + idRegistracije +
+                ", idVozila=" + idVozila +
+                ", datum=" + datum +
+                ", imeFirme='" + imeFirme + '\'' +
+                '}';
+    }
 }
