@@ -1,5 +1,7 @@
 package ba.unsa.etf.rpr.domain;
 
+import java.util.Objects;
+
 public class Vozila {
     private int idVozila, cijenaVozila;
     private String imeVozila, gorivo, bojaVozila;
@@ -68,5 +70,30 @@ public class Vozila {
 
     public void setIdVozaca(int idVozaca) {
         this.idVozaca = idVozaca;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Vozila vozila = (Vozila) o;
+        return idVozila == vozila.idVozila && cijenaVozila == vozila.cijenaVozila && idVozaca == vozila.idVozaca && Objects.equals(imeVozila, vozila.imeVozila) && Objects.equals(gorivo, vozila.gorivo) && Objects.equals(bojaVozila, vozila.bojaVozila);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idVozila, cijenaVozila, imeVozila, gorivo, bojaVozila, idVozaca);
+    }
+
+    @Override
+    public String toString() {
+        return "Vozila{" +
+                "idVozila=" + idVozila +
+                ", cijenaVozila=" + cijenaVozila +
+                ", imeVozila='" + imeVozila + '\'' +
+                ", gorivo='" + gorivo + '\'' +
+                ", bojaVozila='" + bojaVozila + '\'' +
+                ", idVozaca=" + idVozaca +
+                '}';
     }
 }
