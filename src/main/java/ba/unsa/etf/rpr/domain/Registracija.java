@@ -23,13 +23,16 @@ public class Registracija implements Idable{
     public Registracija() {
     }
 
-    public int getIdRegistracije() {
+    @Override
+    public void setId(int id) {
+        this.idRegistracije = id;
+    }
+
+    @Override
+    public int getId() {
         return idRegistracije;
     }
 
-    public void setIdRegistracije(int idRegistracije) {
-        this.idRegistracije = idRegistracije;
-    }
 
     public int getIdVozila() {
         return idVozila;
@@ -60,12 +63,12 @@ public class Registracija implements Idable{
         if (this == o) return true;
         if (!(o instanceof Registracija)) return false;
         Registracija that = (Registracija) o;
-        return getIdRegistracije() == that.getIdRegistracije() && getIdVozila() == that.getIdVozila() && Objects.equals(getDatum(), that.getDatum()) && Objects.equals(getImeFirme(), that.getImeFirme());
+        return getId() == that.getId() && getIdVozila() == that.getIdVozila() && Objects.equals(getDatum(), that.getDatum()) && Objects.equals(getImeFirme(), that.getImeFirme());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getIdRegistracije(), getIdVozila(), getDatum(), getImeFirme());
+        return Objects.hash(getId(), getIdVozila(), getDatum(), getImeFirme());
     }
 
     @Override
@@ -78,13 +81,4 @@ public class Registracija implements Idable{
                 '}';
     }
 
-    @Override
-    public void setId(int id) {
-
-    }
-
-    @Override
-    public int getId() {
-        return 0;
-    }
 }

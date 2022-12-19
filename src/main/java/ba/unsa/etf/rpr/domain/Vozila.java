@@ -26,13 +26,16 @@ public class Vozila implements Idable {
     public Vozila() {
     }
 
-    public int getIdVozila() {
+    @Override
+    public void setId(int id) {
+        this.idVozila = id;
+    }
+
+    @Override
+    public int getId() {
         return idVozila;
     }
 
-    public void setIdVozila(int idVozila) {
-        this.idVozila = idVozila;
-    }
 
     public int getCijenaVozila() {
         return cijenaVozila;
@@ -79,12 +82,12 @@ public class Vozila implements Idable {
         if (this == o) return true;
         if (!(o instanceof Vozila)) return false;
         Vozila vozila = (Vozila) o;
-        return getIdVozila() == vozila.getIdVozila() && getCijenaVozila() == vozila.getCijenaVozila() && getIdVozaca() == vozila.getIdVozaca() && Objects.equals(getImeVozila(), vozila.getImeVozila()) && Objects.equals(getGorivo(), vozila.getGorivo()) && Objects.equals(getBojaVozila(), vozila.getBojaVozila());
+        return getId() == vozila.getId() && getCijenaVozila() == vozila.getCijenaVozila() && getIdVozaca() == vozila.getIdVozaca() && Objects.equals(getImeVozila(), vozila.getImeVozila()) && Objects.equals(getGorivo(), vozila.getGorivo()) && Objects.equals(getBojaVozila(), vozila.getBojaVozila());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getIdVozila(), getCijenaVozila(), getImeVozila(), getGorivo(), getBojaVozila(), getIdVozaca());
+        return Objects.hash(getId(), getCijenaVozila(), getImeVozila(), getGorivo(), getBojaVozila(), getIdVozaca());
     }
 
     @Override
@@ -99,13 +102,4 @@ public class Vozila implements Idable {
                 '}';
     }
 
-    @Override
-    public void setId(int id) {
-
-    }
-
-    @Override
-    public int getId() {
-        return 0;
-    }
 }
