@@ -10,7 +10,7 @@ import java.util.Objects;
  */
 
 
-public class Vozaci {
+public class Vozaci implements Idable{
     private int idVozaca;
     private String vozac, adresa;
     private Date datum;
@@ -22,13 +22,19 @@ public class Vozaci {
         this.datum = datum;
     }
 
-    public int getIdVozaca() {
+    public Vozaci() {
+    }
+
+    @Override
+    public void setId(int id) {
+        this.idVozaca = id;
+    }
+
+    @Override
+    public int getId() {
         return idVozaca;
     }
 
-    public void setIdVozaca(int idVozaca) {
-        this.idVozaca = idVozaca;
-    }
 
     public String getVozac() {
         return vozac;
@@ -59,12 +65,12 @@ public class Vozaci {
         if (this == o) return true;
         if (!(o instanceof Vozaci)) return false;
         Vozaci vozaci = (Vozaci) o;
-        return getIdVozaca() == vozaci.getIdVozaca() && Objects.equals(getVozac(), vozaci.getVozac())  && Objects.equals(getAdresa(), vozaci.getAdresa()) && Objects.equals(getDatum(), vozaci.getDatum());
+        return getId() == vozaci.getId() && Objects.equals(getVozac(), vozaci.getVozac())  && Objects.equals(getAdresa(), vozaci.getAdresa()) && Objects.equals(getDatum(), vozaci.getDatum());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getIdVozaca(), getVozac(), getAdresa(), getDatum());
+        return Objects.hash(getId(), getVozac(), getAdresa(), getDatum());
     }
 
     @Override
@@ -76,4 +82,5 @@ public class Vozaci {
                 ", datum=" + datum +
                 '}';
     }
+
 }

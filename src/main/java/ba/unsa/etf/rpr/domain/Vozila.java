@@ -9,7 +9,7 @@ import java.util.Objects;
  */
 
 
-public class Vozila {
+public class Vozila implements Idable {
     private int idVozila, cijenaVozila;
     private String imeVozila, gorivo, bojaVozila;
     private int idVozaca;
@@ -21,6 +21,9 @@ public class Vozila {
         this.gorivo = gorivo;
         this.bojaVozila = bojaVozila;
         this.idVozaca = idVozaca;
+    }
+
+    public Vozila() {
     }
 
     public int getIdVozila() {
@@ -94,5 +97,15 @@ public class Vozila {
                 ", bojaVozila='" + bojaVozila + '\'' +
                 ", idVozaca=" + idVozaca +
                 '}';
+    }
+
+    @Override
+    public void setId(int id) {
+
+    }
+
+    @Override
+    public int getId() {
+        return 0;
     }
 }

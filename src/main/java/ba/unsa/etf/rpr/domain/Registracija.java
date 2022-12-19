@@ -8,7 +8,7 @@ import java.util.Objects;
  * @author Ali Boudellaa
  */
 
-public class Registracija {
+public class Registracija implements Idable{
     private int idRegistracije, idVozila;
     private Date datum;
     private String imeFirme;
@@ -18,6 +18,9 @@ public class Registracija {
         this.idVozila = idVozila;
         this.datum = datum;
         this.imeFirme = imeFirme;
+    }
+
+    public Registracija() {
     }
 
     public int getIdRegistracije() {
@@ -73,5 +76,15 @@ public class Registracija {
                 ", datum=" + datum +
                 ", imeFirme='" + imeFirme + '\'' +
                 '}';
+    }
+
+    @Override
+    public void setId(int id) {
+
+    }
+
+    @Override
+    public int getId() {
+        return 0;
     }
 }

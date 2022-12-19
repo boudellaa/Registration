@@ -1,4 +1,4 @@
 package ba.unsa.etf.rpr.dao;
 
-public class RegistracijaDao {
+public interface RegistracijaDao extends Dao{
 }

@@ -1,4 +1,4 @@
 package ba.unsa.etf.rpr.dao;
 
-public class VozaciDao {
+public interface VozaciDao extends Dao{
 }
