@@ -10,15 +10,14 @@ import java.util.Objects;
 
 
 public class Vozila implements Idable {
-    private int idVozila, cijenaVozila;
-    private String imeVozila, gorivo, bojaVozila;
+    private int id, cijenaVozila;
+    private String imeVozila, bojaVozila;
     private int idVozaca;
 
-    public Vozila(int idVozila, int cijenaVozila, String imeVozila, String gorivo, String bojaVozila, int idVozaca) {
-        this.idVozila = idVozila;
+    public Vozila(int id, int cijenaVozila, String imeVozila, String bojaVozila, int idVozaca) {
+        this.id = id;
         this.cijenaVozila = cijenaVozila;
         this.imeVozila = imeVozila;
-        this.gorivo = gorivo;
         this.bojaVozila = bojaVozila;
         this.idVozaca = idVozaca;
     }
@@ -28,12 +27,12 @@ public class Vozila implements Idable {
 
     @Override
     public void setId(int id) {
-        this.idVozila = id;
+        this.id = id;
     }
 
     @Override
     public int getId() {
-        return idVozila;
+        return id;
     }
 
 
@@ -51,14 +50,6 @@ public class Vozila implements Idable {
 
     public void setImeVozila(String imeVozila) {
         this.imeVozila = imeVozila;
-    }
-
-    public String getGorivo() {
-        return gorivo;
-    }
-
-    public void setGorivo(String gorivo) {
-        this.gorivo = gorivo;
     }
 
     public String getBojaVozila() {
@@ -87,16 +78,15 @@ public class Vozila implements Idable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getCijenaVozila(), getImeVozila(), getGorivo(), getBojaVozila(), getIdVozaca());
+        return Objects.hash(getId(), getCijenaVozila(), getImeVozila(), getBojaVozila(), getIdVozaca());
     }
 
     @Override
     public String toString() {
         return "Vozila{" +
-                "idVozila=" + idVozila +
+                "id=" + id +
                 ", cijenaVozila=" + cijenaVozila +
                 ", imeVozila='" + imeVozila + '\'' +
-                ", gorivo='" + gorivo + '\'' +
                 ", bojaVozila='" + bojaVozila + '\'' +
                 ", idVozaca=" + idVozaca +
                 '}';
