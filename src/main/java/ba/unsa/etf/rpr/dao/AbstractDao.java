@@ -1,4 +1,14 @@
 package ba.unsa.etf.rpr.dao;
 
-public class AbstractDao {
+import ba.unsa.etf.rpr.domain.Idable;
+
+import java.sql.*;
+import java.util.*;
+
+public abstract class AbstractDao<T extends Idable> implements Dao<T> {
+
+    private Connection connection;
+    private String tableName;
+
+
 }
