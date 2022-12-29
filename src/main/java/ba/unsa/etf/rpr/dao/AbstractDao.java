@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.dao;
 
 import ba.unsa.etf.rpr.domain.Idable;
+import ba.unsa.etf.rpr.exceptions.RegistrationException;
 
 import java.sql.*;
 import java.util.*;
@@ -31,6 +32,14 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
 
     public void setConnection(Connection connection){
         this.connection = connection;
+    }
+
+    public abstract T row2object(ResultSet rs) throws RegistrationException;
+
+    public abstract Map<String, Object> object2row(T object);
+
+    public T getById(int id) throws RegistrationException {
+        return executeQueryUnique("SELECT * FROM "+this.tableName+" WHERE id = ?", new Object[]{id});
     }
 
 
