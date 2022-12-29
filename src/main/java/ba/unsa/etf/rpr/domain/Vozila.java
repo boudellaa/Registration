@@ -73,7 +73,7 @@ public class Vozila implements Idable {
         if (this == o) return true;
         if (!(o instanceof Vozila)) return false;
         Vozila vozila = (Vozila) o;
-        return getId() == vozila.getId() && getCijenaVozila() == vozila.getCijenaVozila() && getIdVozaca() == vozila.getIdVozaca() && Objects.equals(getImeVozila(), vozila.getImeVozila()) && Objects.equals(getGorivo(), vozila.getGorivo()) && Objects.equals(getBojaVozila(), vozila.getBojaVozila());
+        return getId() == vozila.getId() && getCijenaVozila() == vozila.getCijenaVozila() && getIdVozaca() == vozila.getIdVozaca() && Objects.equals(getImeVozila(), vozila.getImeVozila()) && Objects.equals(getBojaVozila(), vozila.getBojaVozila());
     }
 
     @Override
