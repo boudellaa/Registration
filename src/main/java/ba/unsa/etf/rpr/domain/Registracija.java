@@ -9,37 +9,31 @@ import java.util.Objects;
  */
 
 public class Registracija implements Idable{
-    private int idRegistracije, idVozila;
+    private int id;
     private Date datum;
     private String imeFirme;
 
-    public Registracija(int idRegistracije, int idVozila, Date datum, String imeFirme) {
-        this.idRegistracije = idRegistracije;
-        this.idVozila = idVozila;
-        this.datum = datum;
-        this.imeFirme = imeFirme;
-    }
+    private Vozila vozilo;
 
-    public Registracija() {
-    }
 
     @Override
     public void setId(int id) {
-        this.idRegistracije = id;
+        this.id = id;
     }
 
     @Override
     public int getId() {
-        return idRegistracije;
+        return id;
     }
 
-
-    public int getIdVozila() {
-        return idVozila;
+    public Registracija(int id, Date datum, String imeFirme, Vozila vozilo) {
+        this.id = id;
+        this.datum = datum;
+        this.imeFirme = imeFirme;
+        this.vozilo = vozilo;
     }
 
-    public void setIdVozila(int idVozila) {
-        this.idVozila = idVozila;
+    public Registracija() {
     }
 
     public Date getDatum() {
@@ -58,27 +52,33 @@ public class Registracija implements Idable{
         this.imeFirme = imeFirme;
     }
 
+    public Vozila getVozilo() {
+        return vozilo;
+    }
+
+    public void setVozilo(Vozila vozilo) {
+        this.vozilo = vozilo;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Registracija)) return false;
-        Registracija that = (Registracija) o;
-        return getId() == that.getId() && getIdVozila() == that.getIdVozila() && Objects.equals(getDatum(), that.getDatum()) && Objects.equals(getImeFirme(), that.getImeFirme());
+        if (!(o instanceof Registracija that)) return false;
+        return getId() == that.getId() && Objects.equals(getDatum(), that.getDatum()) && Objects.equals(getImeFirme(), that.getImeFirme()) && Objects.equals(getVozilo(), that.getVozilo());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getIdVozila(), getDatum(), getImeFirme());
+        return Objects.hash(getId(), getDatum(), getImeFirme(), getVozilo());
     }
 
     @Override
     public String toString() {
         return "Registracija{" +
-                "idRegistracije=" + idRegistracije +
-                ", idVozila=" + idVozila +
+                "id=" + id +
                 ", datum=" + datum +
                 ", imeFirme='" + imeFirme + '\'' +
+                ", vozilo=" + vozilo +
                 '}';
     }
-
 }
