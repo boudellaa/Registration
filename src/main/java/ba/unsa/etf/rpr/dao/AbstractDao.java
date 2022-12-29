@@ -42,5 +42,9 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
         return executeQueryUnique("SELECT * FROM "+this.tableName+" WHERE id = ?", new Object[]{id});
     }
 
+    public List<T> getAll() throws RegistrationException {
+        return executeQuery("SELECT * FROM "+ tableName, null);
+    }
+
 
 }
