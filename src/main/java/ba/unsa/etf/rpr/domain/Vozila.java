@@ -12,18 +12,8 @@ import java.util.Objects;
 public class Vozila implements Idable {
     private int id, cijenaVozila;
     private String imeVozila, bojaVozila;
-    private int idVozaca;
+    private Vozaci vozac;
 
-    public Vozila(int id, int cijenaVozila, String imeVozila, String bojaVozila, int idVozaca) {
-        this.id = id;
-        this.cijenaVozila = cijenaVozila;
-        this.imeVozila = imeVozila;
-        this.bojaVozila = bojaVozila;
-        this.idVozaca = idVozaca;
-    }
-
-    public Vozila() {
-    }
 
     @Override
     public void setId(int id) {
@@ -35,6 +25,16 @@ public class Vozila implements Idable {
         return id;
     }
 
+    public Vozila(int id, int cijenaVozila, String imeVozila, String bojaVozila, Vozaci vozac) {
+        this.id = id;
+        this.cijenaVozila = cijenaVozila;
+        this.imeVozila = imeVozila;
+        this.bojaVozila = bojaVozila;
+        this.vozac = vozac;
+    }
+
+    public Vozila() {
+    }
 
     public int getCijenaVozila() {
         return cijenaVozila;
@@ -60,36 +60,11 @@ public class Vozila implements Idable {
         this.bojaVozila = bojaVozila;
     }
 
-    public int getIdVozaca() {
-        return idVozaca;
+    public Vozaci getVozac() {
+        return vozac;
     }
 
-    public void setIdVozaca(int idVozaca) {
-        this.idVozaca = idVozaca;
+    public void setVozac(Vozaci vozac) {
+        this.vozac = vozac;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Vozila)) return false;
-        Vozila vozila = (Vozila) o;
-        return getId() == vozila.getId() && getCijenaVozila() == vozila.getCijenaVozila() && getIdVozaca() == vozila.getIdVozaca() && Objects.equals(getImeVozila(), vozila.getImeVozila()) && Objects.equals(getBojaVozila(), vozila.getBojaVozila());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getCijenaVozila(), getImeVozila(), getBojaVozila(), getIdVozaca());
-    }
-
-    @Override
-    public String toString() {
-        return "Vozila{" +
-                "id=" + id +
-                ", cijenaVozila=" + cijenaVozila +
-                ", imeVozila='" + imeVozila + '\'' +
-                ", bojaVozila='" + bojaVozila + '\'' +
-                ", idVozaca=" + idVozaca +
-                '}';
-    }
-
 }
