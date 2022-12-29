@@ -9,7 +9,7 @@ import java.util.*;
 public class VozilaDaoSQLImpl extends AbstractDao<Vozila> implements VozilaDao {
 
     public VozilaDaoSQLImpl() {
-        super("vozila");
+        super("Vozila");
     }
 
     @Override
@@ -20,6 +20,7 @@ public class VozilaDaoSQLImpl extends AbstractDao<Vozila> implements VozilaDao {
             v.setImeVozila(rs.getString("imeVozila"));
             v.setCijenaVozila(rs.getInt("cijenaVozila"));
             v.setBojaVozila(rs.getString("bojaVozila"));
+            v.setVozac(DaoFactory.vozaciDao().getById(rs.getInt("vozac")));
             return v;
         } catch (Exception e) {
             throw new RegistrationException(e.getMessage(), e);
@@ -33,6 +34,7 @@ public class VozilaDaoSQLImpl extends AbstractDao<Vozila> implements VozilaDao {
         m.put("imeVozila", object.getImeVozila());
         m.put("cijenaVozila", object.getCijenaVozila());
         m.put("bojaVozila", object.getBojaVozila());
+        m.put("vozac", object.getVozac().getId());
         return m;
     }
 
@@ -54,6 +56,7 @@ public class VozilaDaoSQLImpl extends AbstractDao<Vozila> implements VozilaDao {
         return v;
     }
 
+
     @Override
     public List<Vozila> searchByColorOfCar(String bojaVozila) throws RegistrationException {
         String query = "SELECT * FROM Vozila WHERE Boja_vozila = ?";
@@ -71,6 +74,7 @@ public class VozilaDaoSQLImpl extends AbstractDao<Vozila> implements VozilaDao {
         }
         return v;
     }
+
 
     @Override
     public List<Vozila> searchByPrice(int cijenaVozila) throws RegistrationException {
