@@ -67,4 +67,27 @@ public class Vozila implements Idable {
     public void setVozac(Vozaci vozac) {
         this.vozac = vozac;
     }
+
+    @Override
+    public String toString() {
+        return "Vozila{" +
+                "id=" + id +
+                ", cijenaVozila=" + cijenaVozila +
+                ", imeVozila='" + imeVozila + '\'' +
+                ", bojaVozila='" + bojaVozila + '\'' +
+                ", vozac=" + vozac +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Vozila vozila)) return false;
+        return getId() == vozila.getId() && getCijenaVozila() == vozila.getCijenaVozila() && Objects.equals(getImeVozila(), vozila.getImeVozila()) && Objects.equals(getBojaVozila(), vozila.getBojaVozila()) && Objects.equals(getVozac(), vozila.getVozac());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getCijenaVozila(), getImeVozila(), getBojaVozila(), getVozac());
+    }
 }
