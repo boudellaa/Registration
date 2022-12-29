@@ -11,15 +11,16 @@ import java.util.Objects;
 
 
 public class Vozaci implements Idable{
-    private int idVozaca;
-    private String vozac, adresa;
-    private Date datum;
+    private int id;
+    private String vozacIme, vozacPrezime, adresa, vozacEmail, vozacSifra;
 
-    public Vozaci(int idVozaca, String vozac, String adresa, Date datum) {
-        this.idVozaca = idVozaca;
-        this.vozac = vozac;
+    public Vozaci(int id, String vozacIme, String vozacPrezime, String adresa, String vozacEmail, String vozacSifra) {
+        this.id = id;
+        this.vozacIme = vozacIme;
+        this.vozacPrezime = vozacPrezime;
+        this.vozacEmail = vozacEmail;
+        this.vozacSifra = vozacSifra;
         this.adresa = adresa;
-        this.datum = datum;
     }
 
     public Vozaci() {
@@ -27,21 +28,44 @@ public class Vozaci implements Idable{
 
     @Override
     public void setId(int id) {
-        this.idVozaca = id;
+        this.id = id;
     }
 
     @Override
     public int getId() {
-        return idVozaca;
+        return id;
     }
 
-
-    public String getVozac() {
-        return vozac;
+    public String getVozacIme() {
+        return vozacIme;
     }
 
-    public void setVozac(String vozac) {
-        this.vozac = vozac;
+    public void setVozacIme(String vozacIme) {
+        this.vozacIme = vozacIme;
+    }
+
+    public String getVozacPrezime() {
+        return vozacPrezime;
+    }
+
+    public void setVozacPrezime(String vozacPrezime) {
+        this.vozacPrezime = vozacPrezime;
+    }
+
+    public String getVozacEmail() {
+        return vozacEmail;
+    }
+
+    public void setVozacEmail(String vozacEmail) {
+        this.vozacEmail = vozacEmail;
+    }
+
+    public String getVozacSifra() {
+        return vozacSifra;
+    }
+
+    public void setVozacSifra(String vozacSifra) {
+        this.vozacSifra = vozacSifra;
     }
 
     public String getAdresa() {
@@ -52,35 +76,28 @@ public class Vozaci implements Idable{
         this.adresa = adresa;
     }
 
-    public Date getDatum() {
-        return datum;
-    }
-
-    public void setDatum(Date datum) {
-        this.datum = datum;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Vozaci)) return false;
         Vozaci vozaci = (Vozaci) o;
-        return getId() == vozaci.getId() && Objects.equals(getVozac(), vozaci.getVozac())  && Objects.equals(getAdresa(), vozaci.getAdresa()) && Objects.equals(getDatum(), vozaci.getDatum());
+        return getId() == vozaci.getId() && Objects.equals(getVozacIme(), vozaci.getVozacIme()) && Objects.equals(getVozacPrezime(), vozaci.getVozacPrezime()) && Objects.equals(getVozacEmail(), vozaci.getVozacEmail()) && Objects.equals(getVozacSifra(), vozaci.getVozacSifra()) && Objects.equals(getAdresa(), vozaci.getAdresa());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getVozac(), getAdresa(), getDatum());
+        return Objects.hash(getId(), getVozacIme(), getVozacPrezime(), getVozacEmail(), getVozacSifra(), getAdresa());
     }
 
     @Override
     public String toString() {
         return "Vozaci{" +
-                "idVozaca=" + idVozaca +
-                ", vozac='" + vozac + '\'' +
+                "id=" + id +
+                ", vozacIme='" + vozacIme + '\'' +
+                ", vozacPrezime='" + vozacPrezime + '\'' +
+                ", vozacEmail='" + vozacEmail + '\'' +
+                ", vozacSifra='" + vozacSifra + '\'' +
                 ", adresa='" + adresa + '\'' +
-                ", datum=" + datum +
                 '}';
     }
-
 }
