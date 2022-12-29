@@ -1,4 +1,11 @@
 package ba.unsa.etf.rpr.dao;
 
-public interface RegistracijaDao extends Dao{
+import ba.unsa.etf.rpr.domain.Registracija;
+import ba.unsa.etf.rpr.exceptions.RegistrationException;
+
+import java.sql.ResultSet;
+
+public interface RegistracijaDao extends Dao<Registracija>{
+
+
 }
