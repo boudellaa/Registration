@@ -12,7 +12,7 @@ public class MainFX extends Application {
         @Override
         public void start(Stage primaryStage) throws Exception{
             Parent root = FXMLLoader.load(getClass().getResource("/FXML/login.fxml"));
-            primaryStage.setTitle("hosa.exe");
+            primaryStage.setTitle("ali.exe");
             primaryStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             primaryStage.setResizable(false);
             primaryStage.show();
