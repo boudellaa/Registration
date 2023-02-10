@@ -11,12 +11,13 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 public class MainFX extends Application {
         @Override
         public void start(Stage primaryStage) throws Exception{
-            Parent root = FXMLLoader.load(getClass().getResource("/FXML/login.fxml"));
-            primaryStage.setTitle("ali.exe");
+            Parent root = FXMLLoader.load(getClass().getResource("/FXML/pocetna.fxml"));
+            primaryStage.setTitle("REDLINE");
             primaryStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             primaryStage.setResizable(false);
             primaryStage.show();
         }
+
         public static void main(String[] args){
             launch(args);
         }
