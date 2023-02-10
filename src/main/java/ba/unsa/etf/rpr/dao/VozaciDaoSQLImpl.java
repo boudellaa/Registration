@@ -13,6 +13,19 @@ public class VozaciDaoSQLImpl extends AbstractDao<Vozaci> implements VozaciDao{
         super("Vozaci");
     }
 
+    private static VozaciDaoSQLImpl instance = null;
+
+    public static VozaciDaoSQLImpl getInstance() {
+        if (instance == null)
+            instance = new VozaciDaoSQLImpl();
+        return instance;
+    }
+
+    public static void removeInstance() {
+        if (instance != null)
+            instance = null;
+    }
+
     @Override
     public Vozaci row2object(ResultSet rs) throws RegistrationException {
             try {
@@ -39,5 +52,11 @@ public class VozaciDaoSQLImpl extends AbstractDao<Vozaci> implements VozaciDao{
         m.put("vozacUser", object.getVozacUser());
         m.put("vozacSifra", object.getVozacSifra());
         return m;
+    }
+
+
+    @Override
+    public Vozaci searchByUsername(String username) throws RegistrationException {
+        return super.executeQueryUnique("SELECT * FROM Vozaci WHERE vozaciUser = ?", new Object[]{username});
     }
 }

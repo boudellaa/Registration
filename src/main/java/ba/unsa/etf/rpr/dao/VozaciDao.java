@@ -4,5 +4,5 @@ import ba.unsa.etf.rpr.domain.Vozaci;
 import ba.unsa.etf.rpr.exceptions.RegistrationException;
 
 public interface VozaciDao extends Dao<Vozaci>{
-
+    Vozaci searchByUsername(String username) throws RegistrationException;
 }
