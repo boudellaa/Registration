@@ -12,7 +12,7 @@ public class MainFX extends Application {
         @Override
         public void start(Stage primaryStage) throws Exception{
             Parent root = FXMLLoader.load(getClass().getResource("/FXML/pocetna.fxml"));
-            primaryStage.setTitle("REDLINE");
+            primaryStage.setTitle("WELCOME TO REDLINE!");
             primaryStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             primaryStage.setResizable(false);
             primaryStage.show();
