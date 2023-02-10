@@ -21,7 +21,7 @@ public class VozaciDaoSQLImpl extends AbstractDao<Vozaci> implements VozaciDao{
                 v.setVozacIme(rs.getString("vozacIme"));
                 v.setVozacPrezime(rs.getString("vozacPrezime"));
                 v.setAdresa(rs.getString("adresa"));
-                v.setVozacEmail(rs.getString("vozacEmail"));
+                v.setVozacUser(rs.getString("vozacUser"));
                 v.setVozacSifra(rs.getString("vozacSifra"));
                 return v;
             } catch (Exception e) {
@@ -36,7 +36,7 @@ public class VozaciDaoSQLImpl extends AbstractDao<Vozaci> implements VozaciDao{
         m.put("vozacIme", object.getVozacIme());
         m.put("vozacPrezime", object.getVozacPrezime());
         m.put("adresa", object.getAdresa());
-        m.put("vozacEmail", object.getVozacUser());
+        m.put("vozacUser", object.getVozacUser());
         m.put("vozacSifra", object.getVozacSifra());
         return m;
     }
