@@ -12,13 +12,13 @@ import java.util.Objects;
 
 public class Vozaci implements Idable{
     private int id;
-    private String vozacIme, vozacPrezime, adresa, vozacEmail, vozacSifra;
+    private String vozacIme, vozacPrezime, adresa, vozacUser, vozacSifra;
 
-    public Vozaci(int id, String vozacIme, String vozacPrezime, String adresa, String vozacEmail, String vozacSifra) {
+    public Vozaci(int id, String vozacIme, String vozacPrezime, String adresa, String vozacUser, String vozacSifra) {
         this.id = id;
         this.vozacIme = vozacIme;
         this.vozacPrezime = vozacPrezime;
-        this.vozacEmail = vozacEmail;
+        this.vozacUser = vozacUser;
         this.vozacSifra = vozacSifra;
         this.adresa = adresa;
     }
@@ -52,12 +52,12 @@ public class Vozaci implements Idable{
         this.vozacPrezime = vozacPrezime;
     }
 
-    public String getVozacEmail() {
-        return vozacEmail;
+    public String getVozacUser() {
+        return vozacUser;
     }
 
     public void setVozacEmail(String vozacEmail) {
-        this.vozacEmail = vozacEmail;
+        this.vozacUser = vozacUser;
     }
 
     public String getVozacSifra() {
@@ -81,12 +81,12 @@ public class Vozaci implements Idable{
         if (this == o) return true;
         if (!(o instanceof Vozaci)) return false;
         Vozaci vozaci = (Vozaci) o;
-        return getId() == vozaci.getId() && Objects.equals(getVozacIme(), vozaci.getVozacIme()) && Objects.equals(getVozacPrezime(), vozaci.getVozacPrezime()) && Objects.equals(getVozacEmail(), vozaci.getVozacEmail()) && Objects.equals(getVozacSifra(), vozaci.getVozacSifra()) && Objects.equals(getAdresa(), vozaci.getAdresa());
+        return getId() == vozaci.getId() && Objects.equals(getVozacIme(), vozaci.getVozacIme()) && Objects.equals(getVozacPrezime(), vozaci.getVozacPrezime()) && Objects.equals(getVozacUser(), vozaci.getVozacUser()) && Objects.equals(getVozacSifra(), vozaci.getVozacSifra()) && Objects.equals(getAdresa(), vozaci.getAdresa());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getVozacIme(), getVozacPrezime(), getVozacEmail(), getVozacSifra(), getAdresa());
+        return Objects.hash(getId(), getVozacIme(), getVozacPrezime(), getVozacUser(), getVozacSifra(), getAdresa());
     }
 
     @Override
@@ -95,7 +95,7 @@ public class Vozaci implements Idable{
                 "id=" + id +
                 ", vozacIme='" + vozacIme + '\'' +
                 ", vozacPrezime='" + vozacPrezime + '\'' +
-                ", vozacEmail='" + vozacEmail + '\'' +
+                ", vozacEmail='" + vozacUser + '\'' +
                 ", vozacSifra='" + vozacSifra + '\'' +
                 ", adresa='" + adresa + '\'' +
                 '}';

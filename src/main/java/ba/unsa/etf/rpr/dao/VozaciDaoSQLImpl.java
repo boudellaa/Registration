@@ -36,7 +36,7 @@ public class VozaciDaoSQLImpl extends AbstractDao<Vozaci> implements VozaciDao{
         m.put("vozacIme", object.getVozacIme());
         m.put("vozacPrezime", object.getVozacPrezime());
         m.put("adresa", object.getAdresa());
-        m.put("vozacEmail", object.getVozacEmail());
+        m.put("vozacEmail", object.getVozacUser());
         m.put("vozacSifra", object.getVozacSifra());
         return m;
     }
