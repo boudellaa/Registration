@@ -57,6 +57,6 @@ public class VozaciDaoSQLImpl extends AbstractDao<Vozaci> implements VozaciDao{
 
     @Override
     public Vozaci searchByUsername(String username) throws RegistrationException {
-        return super.executeQueryUnique("SELECT * FROM Vozaci WHERE vozaciUser = ?", new Object[]{username});
+        return super.executeQueryUnique("SELECT * FROM Vozaci WHERE vozacUser = ?", new Object[]{username});
     }
 }
