@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.controllers;
 import ba.unsa.etf.rpr.domain.Vozila;
+import ba.unsa.etf.rpr.exceptions.RegistrationException;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;

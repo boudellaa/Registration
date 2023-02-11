@@ -26,7 +26,7 @@ public class HomeController {
     public void createAction(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/createAcc.fxml"));
-        stage.setTitle("Login");
+        stage.setTitle("Create your account");
         stage.setScene(new Scene(root, 600, 400));
         stage.setResizable(false);
         stage.show();
