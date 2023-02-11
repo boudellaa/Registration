@@ -10,9 +10,4 @@ public interface VozilaDao extends Dao<Vozila>{
 
     List<Vozila> searchByVozac(Vozaci v) throws RegistrationException;
 
-    List<Vozila> searchByNameOfCar(String imeVozila) throws RegistrationException;
-
-    List<Vozila> searchByPrice(int cijenaVozila) throws RegistrationException;
-
-    List<Vozila> searchByColorOfCar(String bojaVozila) throws RegistrationException;
 }
