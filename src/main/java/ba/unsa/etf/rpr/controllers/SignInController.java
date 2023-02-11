@@ -22,6 +22,8 @@ public class SignInController {
     public PasswordField passwordF;
     public Button btnSgn;
 
+    public static Vozaci CurrentUser;
+
     public void actionClose(ActionEvent actionEvent) {
         Stage stage = (Stage)btnCancel.getScene().getWindow();
         stage.close();
@@ -37,6 +39,7 @@ public class SignInController {
         if(v == null) AllertController.showAlert("Error", "Username not found!", "No user with that username!");
         else if(!passwordF.getText().equals(v.getVozacSifra())) AllertController.showAlert("Error","Incorrect password!","Incorrect password, try again!");
         else{
+            CurrentUser = v;
             Stage stage1 = (Stage)btnSgn.getScene().getWindow();
             stage1.close();
             Stage stage = new Stage();
