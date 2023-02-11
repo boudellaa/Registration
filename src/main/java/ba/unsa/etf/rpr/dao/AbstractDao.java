@@ -137,7 +137,8 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
         if (result != null && result.size() == 1){
             return result.get(0);
         }else{
-            throw new RegistrationException("Object not found");
+            return null;
+            //throw new RegistrationException("Object not found");
         }
     }
 
