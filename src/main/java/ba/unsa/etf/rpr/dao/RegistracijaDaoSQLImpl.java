@@ -20,7 +20,6 @@ public class RegistracijaDaoSQLImpl extends AbstractDao<Registracija> implements
             Registracija r = new Registracija();
             r.setId(rs.getInt("id"));
             r.setDatum(rs.getDate("datum"));
-            r.setImeFirme(rs.getString("imeFirme"));
             r.setVozilo(DaoFactory.vozilaDao().getById(rs.getInt("vozilo")));
             return r;
         } catch (Exception e) {
@@ -33,7 +32,6 @@ public class RegistracijaDaoSQLImpl extends AbstractDao<Registracija> implements
         Map<String, Object> m = new TreeMap<String, Object>();
         m.put("id", object.getId());
         m.put("datum", object.getDatum());
-        m.put("imeFirme", object.getImeFirme());
         m.put("vozilo", object.getVozilo().getId());
         return m;
     }
