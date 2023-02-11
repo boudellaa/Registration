@@ -1,5 +1,9 @@
 package ba.unsa.etf.rpr.domain;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 import java.util.Objects;
 
 
@@ -10,8 +14,9 @@ import java.util.Objects;
 
 
 public class Vozila implements Idable {
-    private int id, cijenaVozila;
-    private String imeVozila, bojaVozila;
+    private int id;
+    private SimpleIntegerProperty cijenaVozila;
+    private SimpleStringProperty imeVozila, bojaVozila;
     private Vozaci vozac;
 
 
@@ -27,37 +32,52 @@ public class Vozila implements Idable {
 
     public Vozila(int id, int cijenaVozila, String imeVozila, String bojaVozila, Vozaci vozac) {
         this.id = id;
-        this.cijenaVozila = cijenaVozila;
-        this.imeVozila = imeVozila;
-        this.bojaVozila = bojaVozila;
+        this.cijenaVozila = new SimpleIntegerProperty(cijenaVozila);
+        this.imeVozila = new SimpleStringProperty(imeVozila);
+        this.bojaVozila = new SimpleStringProperty(bojaVozila);
         this.vozac = vozac;
     }
 
     public Vozila() {
+        this.cijenaVozila = new SimpleIntegerProperty();
+        this.imeVozila = new SimpleStringProperty();
+        this.bojaVozila = new SimpleStringProperty();
     }
 
     public int getCijenaVozila() {
+        return cijenaVozila.get();
+    }
+
+    public SimpleIntegerProperty cijenaVozilaProperty() {
         return cijenaVozila;
     }
 
     public void setCijenaVozila(int cijenaVozila) {
-        this.cijenaVozila = cijenaVozila;
+        this.cijenaVozila.set(cijenaVozila);
     }
 
     public String getImeVozila() {
+        return imeVozila.get();
+    }
+
+    public SimpleStringProperty imeVozilaProperty() {
         return imeVozila;
     }
 
     public void setImeVozila(String imeVozila) {
-        this.imeVozila = imeVozila;
+        this.imeVozila.set(imeVozila);
     }
 
     public String getBojaVozila() {
+        return bojaVozila.get();
+    }
+
+    public SimpleStringProperty bojaVozilaProperty() {
         return bojaVozila;
     }
 
     public void setBojaVozila(String bojaVozila) {
-        this.bojaVozila = bojaVozila;
+        this.bojaVozila.set(bojaVozila);
     }
 
     public Vozaci getVozac() {
@@ -66,28 +86,5 @@ public class Vozila implements Idable {
 
     public void setVozac(Vozaci vozac) {
         this.vozac = vozac;
-    }
-
-    @Override
-    public String toString() {
-        return "Vozila{" +
-                "id=" + id +
-                ", cijenaVozila=" + cijenaVozila +
-                ", imeVozila='" + imeVozila + '\'' +
-                ", bojaVozila='" + bojaVozila + '\'' +
-                ", vozac=" + vozac +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Vozila vozila)) return false;
-        return getId() == vozila.getId() && getCijenaVozila() == vozila.getCijenaVozila() && Objects.equals(getImeVozila(), vozila.getImeVozila()) && Objects.equals(getBojaVozila(), vozila.getBojaVozila()) && Objects.equals(getVozac(), vozila.getVozac());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getCijenaVozila(), getImeVozila(), getBojaVozila(), getVozac());
     }
 }
