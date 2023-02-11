@@ -22,6 +22,8 @@ public class SignInController {
             AllertController.showAlert("Error", "Field blank", "Text fields must be filled in!");
         }else if(usernameF.getText().trim().length() < 7 || usernameF.getText().trim().length() > 10){
             AllertController.showAlert("Error", "Invalid username", "Username needs to be beetween 7 and 10 characters long!");
+        }else if(passwordF.getText().trim().length() < 5 || passwordF.getText().trim().length() > 10){
+            AllertController.showAlert("Error", "Invalid password", "Password needs to be beetween 5 and 10 characters long!");
         }
     }
 }
