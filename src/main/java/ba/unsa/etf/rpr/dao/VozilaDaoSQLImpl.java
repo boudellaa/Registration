@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.dao;
 
+import ba.unsa.etf.rpr.domain.Vozaci;
 import ba.unsa.etf.rpr.domain.Vozila;
 import ba.unsa.etf.rpr.exceptions.RegistrationException;
 
@@ -36,6 +37,13 @@ public class VozilaDaoSQLImpl extends AbstractDao<Vozila> implements VozilaDao {
         m.put("bojaVozila", object.getBojaVozila());
         m.put("vozac", object.getVozac().getId());
         return m;
+    }
+
+    @Override
+    public List<Vozila> searchByVozac(Vozaci v) throws RegistrationException {
+        String query = "SELECT * FROM Vozila voz WHERE voz.vozac = ? && exists (SELECT * FROM Registracija r WHERE voz.id = r.vozilo)";
+        if(v == null) return null;
+        return super.executeQuery(query, new Object[]{v.getId()});
     }
 
     @Override
