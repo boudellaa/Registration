@@ -47,7 +47,7 @@ public class CreateAccController {
         else if(v.searchByUsername(fieldUsername.getText().trim()) != null)
             AllertController.showAlert("Error", "Invalid username", "This username is already taken!");
         else{
-            DaoFactory.vozaciDao().add(new Vozaci(1,fieldName.getText().trim(), fieldSurname.getText().trim(), fieldAddress.getText().trim(),
+            currentUser = DaoFactory.vozaciDao().add(new Vozaci(1,fieldName.getText().trim(), fieldSurname.getText().trim(), fieldAddress.getText().trim(),
                     fieldUsername.getText().trim(), fieldPassword.getText().trim()));
             Stage stage1 = (Stage)btnOK.getScene().getWindow();
             stage1.close();
