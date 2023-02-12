@@ -23,4 +23,6 @@ public class RegistracijaManager {
     public Registracija getById(int id) throws RegistrationException {
         return DaoFactory.registracijaDao().getById(id);
     }
+
+
 }
