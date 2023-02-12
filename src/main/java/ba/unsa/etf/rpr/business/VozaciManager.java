@@ -14,4 +14,8 @@ public class VozaciManager {
     public List<Vozaci> getAll() throws RegistrationException {
         return DaoFactory.vozaciDao().getAll();
     }
+
+    public Vozaci getById(int id) throws RegistrationException {
+        return DaoFactory.vozaciDao().getById(id);
+    }
 }
