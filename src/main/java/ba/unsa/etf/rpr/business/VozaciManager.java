@@ -7,6 +7,7 @@ import ba.unsa.etf.rpr.exceptions.RegistrationException;
 import java.util.List;
 
 public class VozaciManager {
+
     public Vozaci add(Vozaci v) throws RegistrationException {
         return DaoFactory.vozaciDao().add(v);
     }
@@ -26,4 +27,6 @@ public class VozaciManager {
     public Vozaci searchByUsername(String username) throws RegistrationException {
         return DaoFactory.vozaciDao().searchByUsername(username);
     }
+
+
 }
