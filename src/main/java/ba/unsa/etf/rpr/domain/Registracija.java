@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.domain;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
@@ -10,7 +11,7 @@ import java.util.Objects;
 
 public class Registracija implements Idable{
     private int id;
-    private Date datum;
+    private LocalDate datum;
     private Vozila vozilo;
 
 
@@ -24,7 +25,7 @@ public class Registracija implements Idable{
         return id;
     }
 
-    public Registracija(int id, Date datum, Vozila vozilo) {
+    public Registracija(int id, LocalDate datum, Vozila vozilo) {
         this.id = id;
         this.datum = datum;
         this.vozilo = vozilo;
@@ -33,11 +34,11 @@ public class Registracija implements Idable{
     public Registracija() {
     }
 
-    public Date getDatum() {
+    public LocalDate getDatum() {
         return datum;
     }
 
-    public void setDatum(Date datum) {
+    public void setDatum(LocalDate datum) {
         this.datum = datum;
     }
 
