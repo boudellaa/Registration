@@ -51,6 +51,7 @@ public class UserController {
         ObservableList<Vozila> ob = FXCollections.observableArrayList();
         ob.addAll(l);
         table.setItems(ob);
+        table.refresh();
     }
 
     public void clsButtonAction(ActionEvent actionEvent) {
