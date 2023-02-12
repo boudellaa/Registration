@@ -15,4 +15,8 @@ public class VozilaManager {
     public Vozila add(Vozila v) throws RegistrationException {
         return DaoFactory.vozilaDao().add(v);
     }
+
+    public void delete(int id) throws RegistrationException {
+        DaoFactory.vozilaDao().delete(id);
+    }
 }
