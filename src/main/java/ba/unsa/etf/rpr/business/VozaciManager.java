@@ -18,4 +18,8 @@ public class VozaciManager {
     public Vozaci getById(int id) throws RegistrationException {
         return DaoFactory.vozaciDao().getById(id);
     }
+
+    public void delete(int id) throws RegistrationException {
+        DaoFactory.vozaciDao().delete(id);
+    }
 }
