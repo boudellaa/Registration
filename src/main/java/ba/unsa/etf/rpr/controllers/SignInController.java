@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.controllers;
 
+import ba.unsa.etf.rpr.business.VozaciManager;
 import ba.unsa.etf.rpr.dao.DaoFactory;
 import ba.unsa.etf.rpr.domain.Vozaci;
 import ba.unsa.etf.rpr.exceptions.RegistrationException;
@@ -34,7 +35,6 @@ public class SignInController {
             AllertController.showAlert("Error", "Field blank", "Text fields must be filled in!");
             return;
         }
-
         Vozaci v = DaoFactory.vozaciDao().searchByUsername(usernameF.getText());
         if(v == null) AllertController.showAlert("Error", "Username not found!", "No user with that username!");
         else if(!passwordF.getText().equals(v.getVozacSifra())) AllertController.showAlert("Error","Incorrect password!","Incorrect password, try again!");
