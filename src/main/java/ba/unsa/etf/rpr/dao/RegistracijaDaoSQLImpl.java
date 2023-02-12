@@ -19,7 +19,7 @@ public class RegistracijaDaoSQLImpl extends AbstractDao<Registracija> implements
         try {
             Registracija r = new Registracija();
             r.setId(rs.getInt("id"));
-            r.setDatum(rs.getDate("datum"));
+            r.setDatum(rs.getDate("datum").toLocalDate());
             r.setVozilo(DaoFactory.vozilaDao().getById(rs.getInt("vozilo")));
             return r;
         } catch (Exception e) {
