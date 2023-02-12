@@ -11,4 +11,8 @@ public class RegistracijaManager {
     public List<Registracija> getAll() throws RegistrationException {
         return DaoFactory.registracijaDao().getAll();
     }
+
+    public Registracija add(Registracija r) throws RegistrationException {
+        return DaoFactory.registracijaDao().add(r);
+    }
 }
