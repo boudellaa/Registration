@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.controllers;
 import ba.unsa.etf.rpr.dao.DaoFactory;
 import ba.unsa.etf.rpr.dao.VozilaDaoSQLImpl;
+import ba.unsa.etf.rpr.domain.Vozaci;
 import ba.unsa.etf.rpr.domain.Vozila;
 import ba.unsa.etf.rpr.exceptions.RegistrationException;
 import javafx.collections.FXCollections;
@@ -26,6 +27,8 @@ import java.util.ResourceBundle;
 public class UserController {
     public Button clsButton;
     public Button ngBtn;
+
+    public static Vozaci currentUser;
     @FXML
     private TableView table;
     @FXML
@@ -44,6 +47,7 @@ public class UserController {
         cijenaVozila.setCellValueFactory(new PropertyValueFactory<>("cijenaVozila"));
         List<Vozila> l = DaoFactory.vozilaDao().searchByVozac(SignInController.CurrentUser);
         if(l == null) return;
+        currentUser = SignInController.CurrentUser;
         ObservableList<Vozila> ob = FXCollections.observableArrayList();
         ob.addAll(l);
         table.setItems(ob);
