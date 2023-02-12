@@ -21,6 +21,7 @@ import java.util.ResourceBundle;
 
 public class UserController {
     public Button clsButton;
+    public Button ngBtn;
     @FXML
     private TableView table;
     @FXML
@@ -47,5 +48,8 @@ public class UserController {
     public void clsButtonAction(ActionEvent actionEvent) {
         Stage stage = (Stage)clsButton.getScene().getWindow();
         stage.close();
+    }
+
+    public void ngBtnAction(ActionEvent actionEvent) {
     }
 }
