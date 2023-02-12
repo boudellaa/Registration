@@ -15,4 +15,8 @@ public class RegistracijaManager {
     public Registracija add(Registracija r) throws RegistrationException {
         return DaoFactory.registracijaDao().add(r);
     }
+
+    public void delete(int id) throws RegistrationException {
+        DaoFactory.registracijaDao().delete(id);
+    }
 }
