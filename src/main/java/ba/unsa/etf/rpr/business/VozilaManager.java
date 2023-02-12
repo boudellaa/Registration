@@ -28,4 +28,5 @@ public class VozilaManager {
     public List<Vozila> searchByVozac(Vozaci v) throws RegistrationException {
         return DaoFactory.vozilaDao().searchByVozac(v);
     }
+
 }
