@@ -2,6 +2,7 @@ package ba.unsa.etf.rpr.controllers;
 
 import ba.unsa.etf.rpr.dao.DaoFactory;
 import ba.unsa.etf.rpr.domain.Registracija;
+import ba.unsa.etf.rpr.domain.Vozaci;
 import ba.unsa.etf.rpr.domain.Vozila;
 import ba.unsa.etf.rpr.exceptions.RegistrationException;
 import javafx.event.ActionEvent;
@@ -24,9 +25,15 @@ public class NewRegistrationController {
     public TextField fieldColor;
     public TextField fieldName;
 
-    public void cncBtnAction(ActionEvent actionEvent) {
-        Stage stage = (Stage)cncBtn.getScene().getWindow();
-        stage.close();
+    public void cncBtnAction(ActionEvent actionEvent) throws IOException {
+        Stage stage1 = (Stage)cncBtn.getScene().getWindow();
+        stage1.close();
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/FXML/user.fxml"));
+        stage.setTitle("Your registred vehicles");
+        stage.setScene(new Scene(root, 600, 400));
+        stage.setResizable(false);
+        stage.show();
     }
 
 
