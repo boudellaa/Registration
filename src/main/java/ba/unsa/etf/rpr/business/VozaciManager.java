@@ -22,4 +22,8 @@ public class VozaciManager {
     public void delete(int id) throws RegistrationException {
         DaoFactory.vozaciDao().delete(id);
     }
+
+    public Vozaci searchByUsername(String username) throws RegistrationException {
+        return DaoFactory.vozaciDao().searchByUsername(username);
+    }
 }
