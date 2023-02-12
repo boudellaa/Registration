@@ -12,4 +12,7 @@ public class VozilaManager {
         return DaoFactory.vozilaDao().getAll();
     }
 
+    public Vozila add(Vozila v) throws RegistrationException {
+        return DaoFactory.vozilaDao().add(v);
+    }
 }
