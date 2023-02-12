@@ -45,13 +45,20 @@ public class UserController {
         bojaVozila.setCellValueFactory(new PropertyValueFactory<>("bojaVozila"));
         imeVozila.setCellValueFactory(new PropertyValueFactory<>("imeVozila"));
         cijenaVozila.setCellValueFactory(new PropertyValueFactory<>("cijenaVozila"));
-        List<Vozila> l = DaoFactory.vozilaDao().searchByVozac(SignInController.CurrentUser);
+        List<Vozila> l;
+        if(SignInController.CurrentUser == null) {
+            l = DaoFactory.vozilaDao().searchByVozac(CreateAccController.currentUser);
+            currentUser = CreateAccController.currentUser;
+        }else{
+            l = DaoFactory.vozilaDao().searchByVozac(SignInController.CurrentUser);
+            currentUser = SignInController.CurrentUser;
+        }
         if(l == null) return;
-        currentUser = SignInController.CurrentUser;
         ObservableList<Vozila> ob = FXCollections.observableArrayList();
         ob.addAll(l);
         table.setItems(ob);
         table.refresh();
+
     }
 
     public void clsButtonAction(ActionEvent actionEvent) {
