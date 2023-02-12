@@ -40,13 +40,13 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField focusTraversable="false" GridPane.columnIndex="1" />
-      <TextField focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <TextField focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <TextField fx:id="fieldPrice" focusTraversable="false" GridPane.columnIndex="1" />
+      <TextField fx:id="fieldColor" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextField fx:id="fieldName" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
         <buttons>
           <Button defaultButton="true" focusTraversable="false" mnemonicParsing="false" text="Ok" />
-            <Button cancelButton="true" focusTraversable="false" mnemonicParsing="false" text="Cancel" />
+            <Button fx:id="cncBtn" cancelButton="true" focusTraversable="false" mnemonicParsing="false" onAction="#cncBtnAction" text="Cancel" />
         </buttons>
       </ButtonBar>
    </children>
