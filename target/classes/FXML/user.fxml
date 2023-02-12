@@ -28,7 +28,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Button focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: lightgreen;" text="New registration" translateX="230.0" translateY="-20.0" GridPane.rowIndex="1">
+      <Button fx:id="ngBtn" focusTraversable="false" mnemonicParsing="false" onAction="#ngBtnAction" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: lightgreen;" text="New registration" translateX="230.0" translateY="-20.0" GridPane.rowIndex="1">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
