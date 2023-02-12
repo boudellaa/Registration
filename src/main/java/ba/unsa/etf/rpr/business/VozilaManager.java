@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.business;
 
 import ba.unsa.etf.rpr.dao.DaoFactory;
+import ba.unsa.etf.rpr.domain.Vozaci;
 import ba.unsa.etf.rpr.domain.Vozila;
 import ba.unsa.etf.rpr.exceptions.RegistrationException;
 
@@ -22,5 +23,9 @@ public class VozilaManager {
 
     public void delete(int id) throws RegistrationException {
         DaoFactory.vozilaDao().delete(id);
+    }
+
+    public List<Vozila> searchByVozac(Vozaci v) throws RegistrationException {
+        return DaoFactory.vozilaDao().searchByVozac(v);
     }
 }
