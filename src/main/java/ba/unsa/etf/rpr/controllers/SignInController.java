@@ -17,6 +17,10 @@ import java.io.IOException;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
+/**
+ * Controller class for manipulation with login
+ */
+
 public class SignInController {
     public Button btnCancel;
     public TextField usernameF;
@@ -25,10 +29,22 @@ public class SignInController {
 
     public static Vozaci CurrentUser;
 
+    /**
+     * Closing the current window
+     * @param actionEvent
+     */
+
     public void actionClose(ActionEvent actionEvent) {
         Stage stage = (Stage)btnCancel.getScene().getWindow();
         stage.close();
     }
+
+    /**
+     * Opening user window if the verification of username and password has passed
+     * @param actionEvent
+     * @throws IOException
+     * @throws RegistrationException
+     */
 
     public void btnSgnAction(ActionEvent actionEvent) throws IOException, RegistrationException {
         if(usernameF.getText().trim().isEmpty() || passwordF.getText().trim().isEmpty()){
