@@ -7,6 +7,11 @@ import ba.unsa.etf.rpr.exceptions.RegistrationException;
 
 import java.util.List;
 
+/**
+ * Business Logic Layer for management of Vozila
+ * @author Ali Boudellaa
+ */
+
 public class VozilaManager {
 
     public List<Vozila> getAll() throws RegistrationException {
