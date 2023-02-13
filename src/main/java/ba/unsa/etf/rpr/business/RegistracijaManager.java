@@ -6,6 +6,10 @@ import ba.unsa.etf.rpr.exceptions.RegistrationException;
 
 import java.util.List;
 
+/**
+ * Business Logic Layer for managment of Registracija
+ * @author Ali Boudellaa
+ */
 public class RegistracijaManager {
 
     public List<Registracija> getAll() throws RegistrationException {
