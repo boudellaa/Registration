@@ -21,6 +21,7 @@ import org.apache.commons.cli.*;
 public class App {
 
     private static final Option addVehicle = new Option("addV", "add-vehicle", false, "Adding new vehicle to database");
+    private static final Option addDriver = new Option("addD", "add-driver", false, "Adding new driver to database");
 
 
 
