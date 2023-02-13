@@ -10,17 +10,20 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.time.LocalDate;
 import java.util.Date;
-
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
+import org.apache.commons.cli.*;
 
 /**
- * Hello world!
- *
+ *Main class for CLI
  */
 public class App {
+
+    private static final Option addVehicle = new Option("addV", "add-vehicle", false, "Adding new vehicle to database");
+
+
+
     public static void main(String[] args) throws RegistrationException {
     }
 }
