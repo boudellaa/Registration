@@ -23,7 +23,9 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-
+/**
+ * Controller class for manipulation with user window
+ */
 public class UserController {
     public Button clsButton;
     public Button ngBtn;
@@ -61,11 +63,21 @@ public class UserController {
 
     }
 
+    /**
+     * Closing the current window
+     * @param actionEvent
+     */
+
     public void clsButtonAction(ActionEvent actionEvent) {
         Stage stage = (Stage)clsButton.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * Opening a window for new registration
+     * @param actionEvent
+     * @throws IOException
+     */
     public void ngBtnAction(ActionEvent actionEvent) throws IOException {
         Stage stage1 = (Stage)ngBtn.getScene().getWindow();
         stage1.close();
