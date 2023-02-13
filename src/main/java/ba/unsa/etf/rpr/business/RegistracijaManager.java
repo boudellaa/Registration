@@ -7,7 +7,7 @@ import ba.unsa.etf.rpr.exceptions.RegistrationException;
 import java.util.List;
 
 /**
- * Business Logic Layer for managment of Registracija
+ * Business Logic Layer for management of Registracija
  * @author Ali Boudellaa
  */
 public class RegistracijaManager {
