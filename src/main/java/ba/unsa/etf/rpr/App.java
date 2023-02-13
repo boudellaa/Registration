@@ -27,6 +27,7 @@ public class App {
     private static final Option getDrivers = new Option("getD", "get-drivers", false, "Printing all drivers database");
     private static final Option deleteVehicle = new Option("delV", "del-vehicle",false, "Deleting vehicle(by its id) from database");
     private static final Option deleteDriver = new Option("delD", "del-driver",false, "Deleting driver(by its id) from database");
+    private static final Option deleteRegistration = new Option("delR", "del-registration",false, "Deleting registration(by its id) from database");
 
     public static void main(String[] args) throws RegistrationException {
     }
