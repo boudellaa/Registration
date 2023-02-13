@@ -38,6 +38,20 @@ public class App {
         helpFormatter.printOptions(printWriter, 150, options, 2, 7);
         printWriter.close();
     }
+
+    public static Options addOptions() {
+        Options options = new Options();
+        options.addOption(addVehicle);
+        options.addOption(addDriver);
+        options.addOption(addRegistration);
+        options.addOption(getVehicles);
+        options.addOption(getDrivers);
+        options.addOption(deleteVehicle);
+        options.addOption(deleteDriver);
+        options.addOption(deleteRegistration);
+        return options;
+    }
+
     public static void main(String[] args) throws RegistrationException {
     }
 }
