@@ -17,6 +17,10 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Date;
 
+/**
+ * Controller class for the registration of some new vehicles
+ */
+
 public class NewRegistrationController {
 
     public Button cncBtn;
@@ -24,6 +28,12 @@ public class NewRegistrationController {
     public TextField fieldPrice;
     public TextField fieldColor;
     public TextField fieldName;
+
+    /**
+     * Closing current window and opening the previous one
+     * @param actionEvent
+     * @throws IOException
+     */
 
     public void cncBtnAction(ActionEvent actionEvent) throws IOException {
         Stage stage1 = (Stage)cncBtn.getScene().getWindow();
@@ -36,7 +46,13 @@ public class NewRegistrationController {
         stage.show();
     }
 
-
+    /**
+     * Adding a new registration and a new vehicle in database after checking
+     * whether the fields are filled in correctly
+     * @param actionEvent
+     * @throws RegistrationException
+     * @throws IOException
+     */
     public void btnOkAction(ActionEvent actionEvent) throws RegistrationException, IOException {
         if(fieldPrice.getText().trim().isEmpty() || fieldColor.getText().trim().isEmpty() || fieldName.getText().trim().isEmpty()){
             AllertController.showAlert("Error", "Field blank", "Text fields must be filled in!");
