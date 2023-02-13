@@ -16,6 +16,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Controller class for manipulation with window for creating account
+ */
+
 public class CreateAccController {
     public Button btnCancel;
     public TextField fieldName;
@@ -29,11 +33,21 @@ public class CreateAccController {
 
     final private VozaciDaoSQLImpl v = new VozaciDaoSQLImpl();
 
+    /**
+     * Closing current window
+     * @param actionEvent
+     */
     public void btnCancelAction(ActionEvent actionEvent) {
         Stage stage = (Stage)btnCancel.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * Adding a new user in database after checking if any field is empty or incorrect
+     * @param actionEvent
+     * @throws RegistrationException
+     * @throws IOException
+     */
 
     public void registerAction(ActionEvent actionEvent) throws RegistrationException, IOException {
         if(fieldName.getText().trim().isEmpty() || fieldSurname.getText().trim().isEmpty() ||
