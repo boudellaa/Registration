@@ -22,7 +22,7 @@ public class App {
 
     private static final Option addVehicle = new Option("addV", "add-vehicle", false, "Adding new vehicle to database");
     private static final Option addDriver = new Option("addD", "add-driver", false, "Adding new driver to database");
-
+    private static final Option addRegistration = new Option("addR", "add-registration", false, "Adding new registration to database");
 
 
     public static void main(String[] args) throws RegistrationException {
