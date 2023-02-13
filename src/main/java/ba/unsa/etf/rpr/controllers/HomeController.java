@@ -9,9 +9,19 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Controller class for manipulation with home window
+ */
+
 public class HomeController {
     public Button signIn;
     public Button createAcc;
+
+    /**
+     * Opening new window for signing in app
+     * @param actionEvent
+     * @throws IOException
+     */
 
     public void signInAction(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
@@ -22,6 +32,11 @@ public class HomeController {
         stage.show();
     }
 
+    /**
+     * Opening new window for creating new account
+     * @param actionEvent
+     * @throws IOException
+     */
 
     public void createAction(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
