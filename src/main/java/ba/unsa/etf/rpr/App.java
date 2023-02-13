@@ -10,6 +10,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.Date;
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
@@ -29,6 +31,13 @@ public class App {
     private static final Option deleteDriver = new Option("delD", "del-driver",false, "Deleting driver(by its id) from database");
     private static final Option deleteRegistration = new Option("delR", "del-registration",false, "Deleting registration(by its id) from database");
 
+    public static void printFormattedOptions(Options options) {
+        HelpFormatter helpFormatter = new HelpFormatter();
+        PrintWriter printWriter = new PrintWriter(System.out);
+        helpFormatter.printUsage(printWriter, 150, "java -jar Projekat.jar [option] 'something else if needed' ");
+        helpFormatter.printOptions(printWriter, 150, options, 2, 7);
+        printWriter.close();
+    }
     public static void main(String[] args) throws RegistrationException {
     }
 }
