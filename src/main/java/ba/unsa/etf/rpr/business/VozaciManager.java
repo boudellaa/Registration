@@ -6,6 +6,11 @@ import ba.unsa.etf.rpr.exceptions.RegistrationException;
 
 import java.util.List;
 
+/**
+ * Business Logic Layer for management of Vozaci
+ * @author Ali Boudellaa
+ */
+
 public class VozaciManager {
 
     public Vozaci add(Vozaci v) throws RegistrationException {
