@@ -76,6 +76,8 @@ public class App {
             if(v1 == null) System.out.println("There is no available drivers!");
             else
                 for(Vozaci vozac : v1) System.out.println(vozac);
+        }else if(cl.hasOption(deleteVehicle.getOpt()) || cl.hasOption(deleteVehicle.getLongOpt())){
+
         }
     }
 }
