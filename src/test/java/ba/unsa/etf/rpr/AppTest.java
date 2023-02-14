@@ -12,6 +12,7 @@ import ba.unsa.etf.rpr.exceptions.RegistrationException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -106,6 +107,21 @@ public class AppTest
         dman.update(v);
     }
 
+    @Test
+    void updateRegistrationTest() throws RegistrationException {
+        List<Registracija> l = rman.getAll();
+        Registracija r = l.get(0);
+        LocalDate temp = r.getDatum();
+        r.setDatum(LocalDate.now());
+        rman.update(r);
+        l = rman.getAll();
+        boolean izmijenjen = false;
+        for(Registracija rp : l)
+            if(rp.getDatum().equals(r.getDatum())) izmijenjen = true;
+        Assertions.assertTrue(izmijenjen);
+        r.setDatum(temp);
+        rman.update(r);
+    }
 
 
 
