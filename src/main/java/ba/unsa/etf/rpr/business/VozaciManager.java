@@ -37,5 +37,15 @@ public class VozaciManager {
         return DaoFactory.vozaciDao().searchByUsername(username);
     }
 
+    public static boolean userCheck(String username){
+        if(username.length() < 7 || username.length() > 10 || username.isEmpty()) return false;
+        return true;
+    }
+
+    public static boolean passwordCheck(String password){
+        if(password.length() < 7 || password.length() > 10 || password.isEmpty()) return false;
+        return true;
+    }
+
 
 }
