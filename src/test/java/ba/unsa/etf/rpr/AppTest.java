@@ -51,5 +51,26 @@ public class AppTest
 
     }
 
+    @Test
+    void addDeleteDriver() throws RegistrationException {
+       Vozaci v = new Vozaci(0, "Test", "Testic", "testna", "test1234", "test1234");
+       v = dman.add(v);
+       List<Vozaci> l = dman.getAll();
+       boolean dodan = false;
+       for(Vozaci voz : l)
+           if(v.getId() == voz.getId()) dodan = true;
+
+       Assertions.assertTrue(dodan);
+       dman.delete(v.getId());
+       boolean obrisan = true;
+       l = dman.getAll();
+       for(Vozaci voz : l)
+           if(v.getId() == voz.getId())
+               obrisan = false;
+       Assertions.assertTrue(obrisan);
+    }
+
+
+
 
 }
