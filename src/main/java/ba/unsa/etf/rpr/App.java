@@ -80,7 +80,7 @@ public class App {
             try{
                 int id = Integer.parseInt(cl.getArgList().get(0));
                 vozman.getById(id);
-
+                vozman.delete(id);
 
             }catch(Exception e){
 
