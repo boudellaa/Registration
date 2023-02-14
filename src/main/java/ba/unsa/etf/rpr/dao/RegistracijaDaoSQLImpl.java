@@ -4,7 +4,7 @@ import ba.unsa.etf.rpr.domain.Registracija;
 import ba.unsa.etf.rpr.domain.Vozila;
 import ba.unsa.etf.rpr.exceptions.RegistrationException;
 
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -13,6 +13,7 @@ public class RegistracijaDaoSQLImpl extends AbstractDao<Registracija> implements
     public RegistracijaDaoSQLImpl() {
         super("Registracija");
     }
+
 
     @Override
     public Registracija row2object(ResultSet rs) throws RegistrationException {
