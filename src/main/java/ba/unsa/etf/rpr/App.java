@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr;
 
 import ba.unsa.etf.rpr.business.VozaciManager;
+import ba.unsa.etf.rpr.business.VozilaManager;
 import ba.unsa.etf.rpr.dao.*;
 import ba.unsa.etf.rpr.domain.Registracija;
 import ba.unsa.etf.rpr.domain.Vozaci;
@@ -59,5 +60,6 @@ public class App {
         CommandLine cl = commandLineParser.parse(options, args);
 
         VozaciManager vman = new VozaciManager();
+        VozilaManager vozman = new VozilaManager();
     }
 }
