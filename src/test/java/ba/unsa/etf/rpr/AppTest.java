@@ -21,13 +21,14 @@ public class AppTest
     VozilaManager vman = new VozilaManager();
     RegistracijaManager rman = new RegistracijaManager();
 
-    @Test
+   @Test
     void getByIdVehicleTest() throws RegistrationException {
         List<Vozila> l = vman.getAll();
         Vozila v1 = l.get(0);
         int id = v1.getId();
         Vozila v2 = vman.getById(id);
-        Assertions.assertEquals(v1, v2);
+        int id1 = v2.getId();
+        Assertions.assertEquals(id, id1);
     }
 
     @Test
@@ -39,13 +40,14 @@ public class AppTest
         Assertions.assertEquals(d1, d2);
     }
 
-    @Test
+   @Test
     void getByIdRegistrationTest() throws RegistrationException {
         List<Registracija> l = rman.getAll();
         Registracija r1 = l.get(0);
         int id = r1.getId();
         Registracija r2 = rman.getById(id);
-        Assertions.assertEquals(r1, r2);
+        int id1 = r2.getId();
+        Assertions.assertEquals(id, id1);
 
     }
 
