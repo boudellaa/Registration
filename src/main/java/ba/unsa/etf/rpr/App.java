@@ -55,6 +55,6 @@ public class App {
     public static void main(String[] args) throws RegistrationException, ParseException {
         Options options = addOptions();
         CommandLineParser commandLineParser = new DefaultParser();
-
+        CommandLine cl = commandLineParser.parse(options, args);
     }
 }
