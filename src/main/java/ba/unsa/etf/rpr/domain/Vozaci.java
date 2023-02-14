@@ -56,7 +56,7 @@ public class Vozaci implements Idable{
         return vozacUser;
     }
 
-    public void setVozacUser(String vozacEmail) {
+    public void setVozacUser(String vozacUser) {
         this.vozacUser = vozacUser;
     }
 
@@ -95,7 +95,7 @@ public class Vozaci implements Idable{
                 "id=" + id +
                 ", vozacIme='" + vozacIme + '\'' +
                 ", vozacPrezime='" + vozacPrezime + '\'' +
-                ", vozacEmail='" + vozacUser + '\'' +
+                ", vozacUser='" + vozacUser + '\'' +
                 ", vozacSifra='" + vozacSifra + '\'' +
                 ", adresa='" + adresa + '\'' +
                 '}';
