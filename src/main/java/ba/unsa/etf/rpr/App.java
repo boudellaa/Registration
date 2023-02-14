@@ -79,6 +79,8 @@ public class App {
         }else if(cl.hasOption(deleteVehicle.getOpt()) || cl.hasOption(deleteVehicle.getLongOpt())){
             try{
                 int id = Integer.parseInt(cl.getArgList().get(0));
+                vozman.getById(id);
+
 
             }catch(Exception e){
 
