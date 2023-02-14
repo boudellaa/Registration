@@ -52,7 +52,9 @@ public class App {
         return options;
     }
 
-    public static void main(String[] args) throws RegistrationException {
+    public static void main(String[] args) throws RegistrationException, ParseException {
         Options options = addOptions();
+        CommandLineParser commandLineParser = new DefaultParser();
+
     }
 }
