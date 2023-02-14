@@ -30,6 +30,14 @@ public class AppTest
         Assertions.assertEquals(v1, v2);
     }
 
+    @Test
+    void getByIdDriverTest() throws RegistrationException {
+        List<Vozaci> l = dman.getAll();
+        Vozaci d1 = l.get(0);
+        int id = d1.getId();
+        Vozaci d2 = dman.getById(id);
+        Assertions.assertEquals(d1, d2);
+    }
 
 
 
