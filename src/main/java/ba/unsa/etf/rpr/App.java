@@ -57,7 +57,7 @@ public class App {
         return options;
     }
 
-    public static void main(String[] args) throws RegistrationException, ParseException {
+    public static void main(String[] args) throws Exception {
         Options options = addOptions();
         CommandLineParser commandLineParser = new DefaultParser();
         CommandLine cl = commandLineParser.parse(options, args);
@@ -77,7 +77,12 @@ public class App {
             else
                 for(Vozaci vozac : v1) System.out.println(vozac);
         }else if(cl.hasOption(deleteVehicle.getOpt()) || cl.hasOption(deleteVehicle.getLongOpt())){
+            try{
+                int id = Integer.parseInt(cl.getArgList().get(0));
 
+            }catch(Exception e){
+
+            }
         }
     }
 }
