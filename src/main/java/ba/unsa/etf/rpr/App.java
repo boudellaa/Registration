@@ -68,6 +68,7 @@ public class App {
 
         if(cl.hasOption(getVehicles.getOpt()) || cl.hasOption(getVehicles.getLongOpt())){
             List<Vozila> v1 = vozman.getAll();
+            if(v1 == null) System.out.println("There is no available vehicles!");
         }
     }
 }
