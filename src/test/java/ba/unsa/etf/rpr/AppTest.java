@@ -39,6 +39,15 @@ public class AppTest
         Assertions.assertEquals(d1, d2);
     }
 
+    @Test
+    void getByIdRegistrationTest() throws RegistrationException {
+        List<Registracija> l = rman.getAll();
+        Registracija r1 = l.get(0);
+        int id = r1.getId();
+        Registracija r2 = rman.getById(id);
+        Assertions.assertEquals(r1, r2);
+
+    }
 
 
 }
