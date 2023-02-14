@@ -17,6 +17,8 @@ import javafx.stage.Stage;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
+
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 import org.apache.commons.cli.*;
 
@@ -63,5 +65,9 @@ public class App {
         VozaciManager vman = new VozaciManager();
         VozilaManager vozman = new VozilaManager();
         RegistracijaManager rman = new RegistracijaManager();
+
+        if(cl.hasOption(getVehicles.getOpt()) || cl.hasOption(getVehicles.getLongOpt())){
+            List<Vozila> v1 = vozman.getAll();
+        }
     }
 }
