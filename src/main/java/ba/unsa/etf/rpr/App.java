@@ -87,6 +87,17 @@ public class App {
                 else
                     System.out.println(e.getMessage());
             }
+        }else if(cl.hasOption(deleteDriver.getOpt()) || cl.hasOption(deleteDriver.getLongOpt())){
+            try{
+                int id = Integer.parseInt(cl.getArgList().get(0));
+                vman.getById(id);
+                vman.delete(id);
+                System.out.println("Driver deleted successfully!");
+            }catch(Exception e){
+                if(e.getMessage().contains("not found")) System.out.println("Driver does not exist!");
+                else
+                    System.out.println(e.getMessage());
+            }
         }
     }
 }
