@@ -75,7 +75,7 @@ public class AppTest
     }
 
     @Test
-    void UpdateVehicleTest() throws RegistrationException {
+    void updateVehicleTest() throws RegistrationException {
        List<Vozila> l = vman.getAll();
        Vozila v = l.get(0);
        String temp = v.getImeVozila();
@@ -90,6 +90,21 @@ public class AppTest
        vman.update(v);
     }
 
+    @Test
+    void updateDriverTest() throws RegistrationException {
+        List<Vozaci> l = dman.getAll();
+        Vozaci v = l.get(0);
+        String temp = v.getVozacIme();
+        v.setVozacIme("test");
+        dman.update(v);
+        l = dman.getAll();
+        boolean izmijenjen = false;
+        for(Vozaci voz : l)
+            if(voz.equals(v)) izmijenjen = true;
+        Assertions.assertTrue(izmijenjen);
+        v.setVozacIme(temp);
+        dman.update(v);
+    }
 
 
 
