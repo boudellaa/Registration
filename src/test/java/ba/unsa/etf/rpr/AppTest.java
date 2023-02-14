@@ -11,6 +11,7 @@ import ba.unsa.etf.rpr.domain.Vozila;
 import ba.unsa.etf.rpr.exceptions.RegistrationException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -124,7 +125,20 @@ public class AppTest
     }
 
 
+    @Test
+    void passwordTest() throws RegistrationException {
+       VozaciManager v = Mockito.mock(VozaciManager.class);
+       Mockito.when(v.getById(0)).thenReturn(new Vozaci(200, "Kerim", "Alibasic", "testna", "test1234", "test1234"));
+       Assertions.assertTrue(VozaciManager.passwordCheck(v.getById(0).getVozacSifra()));
+    }
 
+
+    @Test
+    void usernameTest() throws RegistrationException {
+        VozaciManager v = Mockito.mock(VozaciManager.class);
+        Mockito.when(v.getById(0)).thenReturn(new Vozaci(200, "Kerim", "Alibasic", "testna", "test1234", "test1234"));
+        Assertions.assertTrue(VozaciManager.userCheck(v.getById(0).getVozacUser()));
+    }
 
 
 }
