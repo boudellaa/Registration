@@ -30,6 +30,10 @@ public class VozilaManager {
         DaoFactory.vozilaDao().delete(id);
     }
 
+    public Vozila update(Vozila v) throws RegistrationException {
+        return DaoFactory.vozilaDao().update(v);
+    }
+
     public List<Vozila> searchByVozac(Vozaci v) throws RegistrationException {
         return DaoFactory.vozilaDao().searchByVozac(v);
     }
