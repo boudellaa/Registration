@@ -2,19 +2,35 @@ package ba.unsa.etf.rpr;
 
 import static org.junit.Assert.assertTrue;
 
-import org.junit.Test;
+import ba.unsa.etf.rpr.business.RegistracijaManager;
+import ba.unsa.etf.rpr.business.VozaciManager;
+import ba.unsa.etf.rpr.business.VozilaManager;
+import ba.unsa.etf.rpr.domain.Registracija;
+import ba.unsa.etf.rpr.domain.Vozaci;
+import ba.unsa.etf.rpr.domain.Vozila;
+import ba.unsa.etf.rpr.exceptions.RegistrationException;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-/**
- * Unit test for simple App.
- */
+import java.util.List;
+
+
 public class AppTest 
 {
-    /**
-     * Rigorous Test :-)
-     */
+    VozaciManager dman = new VozaciManager();
+    VozilaManager vman = new VozilaManager();
+    RegistracijaManager rman = new RegistracijaManager();
+
     @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
+    void getByIdVehicleTest() throws RegistrationException {
+        List<Vozila> l = vman.getAll();
+        Vozila v1 = l.get(0);
+        int id = v1.getId();
+        Vozila v2 = vman.getById(id);
+        Assertions.assertEquals(v1, v2);
     }
+
+
+
+
 }
