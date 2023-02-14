@@ -98,6 +98,17 @@ public class App {
                 else
                     System.out.println(e.getMessage());
             }
+        }else if(cl.hasOption(deleteRegistration.getOpt()) || cl.hasOption(deleteRegistration.getLongOpt())){
+            try{
+                int id = Integer.parseInt(cl.getArgList().get(0));
+                rman.getById(id);
+                rman.delete(id);
+                System.out.println("Registration deleted successfully!");
+            }catch(Exception e){
+                if(e.getMessage().contains("not found")) System.out.println("Registration does not exist!");
+                else
+                    System.out.println(e.getMessage());
+            }
         }
     }
 }
