@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr;
 
+import ba.unsa.etf.rpr.business.RegistracijaManager;
 import ba.unsa.etf.rpr.business.VozaciManager;
 import ba.unsa.etf.rpr.business.VozilaManager;
 import ba.unsa.etf.rpr.dao.*;
@@ -61,5 +62,6 @@ public class App {
 
         VozaciManager vman = new VozaciManager();
         VozilaManager vozman = new VozilaManager();
+        RegistracijaManager rman = new RegistracijaManager();
     }
 }
