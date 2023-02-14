@@ -27,9 +27,7 @@ import org.apache.commons.cli.*;
  */
 public class App {
 
-    private static final Option addVehicle = new Option("addV", "add-vehicle", false, "Adding new vehicle to database");
     private static final Option addDriver = new Option("addD", "add-driver", false, "Adding new driver to database");
-    private static final Option addRegistration = new Option("addR", "add-registration", false, "Adding new registration to database");
     private static final Option getVehicles = new Option("getV", "get-vehicles", false, "Printing all vehicles database");
     private static final Option getDrivers = new Option("getD", "get-drivers", false, "Printing all drivers database");
     private static final Option deleteVehicle = new Option("delV", "del-vehicle",false, "Deleting vehicle(by its id) from database");
@@ -46,9 +44,7 @@ public class App {
 
     public static Options addOptions() {
         Options options = new Options();
-        options.addOption(addVehicle);
         options.addOption(addDriver);
-        options.addOption(addRegistration);
         options.addOption(getVehicles);
         options.addOption(getDrivers);
         options.addOption(deleteVehicle);
@@ -109,6 +105,22 @@ public class App {
                 else
                     System.out.println(e.getMessage());
             }
-        }
+        }else if(cl.hasOption(addDriver.getOpt()) || cl.hasOption(addDriver.getLongOpt())){
+            try {
+                if (cl.getArgList().size() != 5) {
+                    System.out.println("Invalid number of arguments! Expected 5 arguments, recieved " + cl.getArgList().size() + " arguments.");
+                    System.out.println("[String vozacIme, String vozacPrezime, String adresa, String vozacUser, String vozacSifra]");
+                } else {
+                    Vozaci temp = vman.add(new Vozaci(0,cl.getArgList().get(0), cl.getArgList().get(1), cl.getArgList().get(2), cl.getArgList().get(3),cl.getArgList().get(4)));
+                    System.out.println("Driver added to database successfully!");
+                    System.out.println(temp);
+                }
+            } catch (Exception e) {
+                System.out.println("Something went wrong with adding driver...");
+                throw e;
+            }
+        }else printFormattedOptions(options);
+        if(AbstractDao.getConnection() != null)
+            AbstractDao.getConnection().close();
     }
 }
