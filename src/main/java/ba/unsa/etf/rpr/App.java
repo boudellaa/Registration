@@ -82,9 +82,8 @@ public class App {
                 vozman.getById(id);
                 vozman.delete(id);
                 System.out.println("Vehicle deleted successfully!");
-
             }catch(Exception e){
-
+                if(e.getMessage().contains("not found")) System.out.println("Vehicle does not exist!");
             }
         }
     }
