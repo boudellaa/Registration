@@ -73,6 +73,7 @@ public class App {
                 for(Vozila vozilo : v1) System.out.println(vozilo);
         }else if(cl.hasOption(getDrivers.getOpt()) || cl.hasOption(getDrivers.getLongOpt())){
             List<Vozaci> v1 = vman.getAll();
+            if(v1 == null) System.out.println("There is no available drivers!");
         }
     }
 }
